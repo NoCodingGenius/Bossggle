@@ -1,0 +1,64 @@
+.leftside {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+    background-color: grey;
+    height: 100vh
+}
+
+.rightside {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+    height: 100vh;
+}
+
+
+.btn-group .button {
+  display: block;
+}
+
+.button {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 12px;
+  float: right;
+}
+
+.button2 {
+  background-color: #f44336;
+  color: white;
+  border-radius: 12px;
+  float: right;
+}
+
+.button3 {
+  background-color: #555;
+  color: white;
+  border-radius: 12px;
+  float: right;
+}
+
+.btn1 {
+  width: 50px;
+  height: 50px;
+  background-color: grey;
+  color: white;
+}
+
+.other {
+  background-color: orange;
+}
+
+table,td {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
