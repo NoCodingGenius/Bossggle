@@ -9,13 +9,24 @@ for ( var i=0; i<question.length; i++){
   question[i].addEventListener('click', myColor)
 }
 
-//A function to get the ID adn puts the possible letters in the ID
-function getLetters () {
-  var lettersContainer = document.querySelector('#word');
-  var letters = lettersContainer.innerText;
-  return letters;
+//A function to get the ID and puts the possible letters in the ID
+function getWord () {
+  var letterContainer = document.querySelector('.btn1');
+  var letter = letterContainer.innerText;
+  document.getElementById("word").textContent = letter;
 }
-//This function is to create the word
-function updateWord (letters) {
-  document.getElementByID("word").textContent= letters;
+
+function clearWord() {
+  document.getElementById("word").textContent = "Word"
+}
+
+function randomLetter() {
+  alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  var getRandomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
+  var emptyString = emptyString + getRandomLetter;
+  document.getElementsByClassName('btn1').textContent = emptyString;
+}
+
+function randomVowel() {
+
 }
