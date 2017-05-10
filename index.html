@@ -12,6 +12,7 @@
 
 <!--Leftside of the screen-->
 <div class="row">
+<div id="word">Word</div>
 <div class="leftside col-sm-4">
 <header>
   <h1>Bossggle</h1>
@@ -34,33 +35,33 @@
 <div class="rightside col-md-8">
 <div class="btn-group">
   <button class="button" type="button" onclick="#">Submit</button>
-  <button class="button2" type="button" onclick="#">Clear</button>
+  <button class="button2" type="button" onclick="clearWord()">Clear</button>
   <!--Gameboard goes here-->
 
   <table>
     <tr>
-      <td><button class="btn1" type="button">X</button></td>
-      <td><button class="btn1" type="button">D</button></td>
-      <td><button class="btn1" type="button">R</button></td>
-      <td><button class="btn1" type="button">O</button></td>
+      <td><button class="btn" onclick="getWord(0)">X</button></td>
+      <td><button class="btn" onclick="getWord()">D</button></td>
+      <td><button class="btn" onclick="getWord(2)">R</button></td>
+      <td><button class="btn" onclick="getWord(3)">O</button></td>
     </tr>
     <tr>
-      <td><button class="btn1" type="button">S</button></td>
-      <td><button class="btn1" type="button">K</button></td>
-      <td><button class="btn1" type="button">A</button></td>
-      <td><button class="btn1" type="button">Y</button></td>
+      <td><button class="btn" onclick="getWord()">S</button></td>
+      <td><button class="btn" onclick="getWord()">K</button></td>
+      <td><button class="btn" onclick="getWord()">A</button></td>
+      <td><button class="btn" onclick="getWord()">Y</button></td>
     </tr>
     <tr>
-      <td><button class="btn1" type="button">M</button></td>
-      <td><button class="btn1" type="button">N</button></td>
-      <td><button class="btn1" type="button">P</button></td>
-      <td><button class="btn1" type="button">Q</button></td>
+      <td><button class="btn" onclick="getWord()">M</button></td>
+      <td><button class="btn" onclick="getWord()">N</button></td>
+      <td><button class="btn" onclick="getWord()">P</button></td>
+      <td><button class="btn" onclick="getWord()">Q</button></td>
     </tr>
     <tr>
-      <td><button class="btn1" type="button">I</button></td>
-      <td><button class="btn1" type="button">U</button></td>
-      <td><button class="btn1" type="button">E</button></td>
-      <td><button class="btn1" type="button">Z</button></td>
+      <td><button class="btn" onclick="getWord()">I</button></td>
+      <td><button class="btn" onclick="getWord()">U</button></td>
+      <td><button class="btn" onclick="getWord()">E</button></td>
+      <td><button class="btn" onclick="getWord()">Z</button></td>
     </tr>
   </table>
 
