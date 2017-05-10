@@ -36,13 +36,19 @@ function clearWord() {
   document.getElementById("word").textContent = "Word"
 }
 //A Function to generate random letters when the board is reset
+
+
 function randomLetter() {
   alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
   var getRandomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];
   var emptyString = emptyString + getRandomLetter;
+  
+
   document.getElementsByClassName('btn').textContent = emptyString;
 }
 //A function to generate a random vowel
+
+
 function randomVowel() {
 
 }
