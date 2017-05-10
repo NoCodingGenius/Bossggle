@@ -55,12 +55,18 @@ function resetWord() {
   clearWord();
   letterContainer3 = [];
   letterContainer4 = [];
+  letterContainer5 = [];
+  document.getElementById("list").innerHTML = "";
+  document.getElementById("points").innerHTML = "0";
   for (var i = 0; i < question.length; i++) {
-    var random = randomLetter();
-    question[i] = random;
+    if ( i%5 == 0 ) {
+    question[i].innerHTML = randomVowel();
+  }
+  else {
+    question[i].innerHTML = randomLetter();
   }
 }
-
+}
 //A Function to generate random letters when the board is reset
 function randomLetter() {
   alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -73,3 +79,5 @@ function randomVowel() {
   var getRandomVowel = alphabet[Math.floor(Math.random() * alphabet.length)];
   return getRandomVowel;
 }
+
+window.onload = resetWord();
