@@ -5,12 +5,12 @@ These are the basic specs for Bossggle, broken into 5 stages. If you complete th
 #### Stage 1
 - [X] Repo is created on GitHub.
 - [X] The site looks the same as in the [mockups](#mockups) (except without the same words/letters/points - those are just placeholders).
-- [ ] Your repo includes the files: `index.html`, `main.css`, and `bossggle.js`.
+- [X] Your repo includes the files: `index.html`, `main.css`, and `bossggle.js`.
 
 #### Stage 2
 - [X] Clicking on a letter changes its color to orange.
 - [X] Clicking on a letter adds it to the word.
-- [ ] The word is updated with each new letter.
+- [X] The word is updated with each new letter.
 
 #### Stage 3
 - [ ] Pressing the "Submit" button submits the word for points.
