@@ -14,14 +14,14 @@ These are the basic specs for Bossggle, broken into 5 stages. If you complete th
 
 #### Stage 3
 - [ ] Pressing the "Submit" button submits the word for points.
-- [ ] Pressing the "Clear" button clears the word and all selected letters.
+- [X] Pressing the "Clear" button clears the word and all selected letters.
 - [ ] Pressing the "Reset" button clears the word, all selected letters, and generates a new set of letters on the board.
 
 #### Stage 4
 - [ ] Submitted words are added to the left in reverse chronological order (last word submitted is at the top).
 - [ ] Submitted words are awarded 9 points per letter.
 - [ ] Any word / combination of characters is allowed. There is no validation.
-- [ ] Players start with a score of 0.
+- [X] Players start with a score of 0.
 - [ ] The score is updated after each word is submitted.
 
 #### Stage 5

@@ -6,8 +6,8 @@ var letCon2 = [];
 function getLetter(){
   var word = event.target.innerHTML
   letCon1.push(word);
-  window['letCon2'] = letCon1.join("")
-  document.getElementById("word").innerHTML = window['letCon2'];
+  letCon2 = letCon1.join("");
+  document.getElementById("word").innerHTML = letCon2;
 }
 
 //when i click any particular button
@@ -28,12 +28,21 @@ for (var i = 0; i < question.length; i++){
 //A function to clear the board
 
 function clearWord() {
-  document.getElementById("word").textContent = "Word"
-  window['letcon2'] = [];
+  document.getElementById("word").textContent = "Word";
+  console.log( letCon2 )
+  letCon1 = [];
+  letCon2 = [];
   for (var i = 0; i < question.length; i++){
       question[i].style.backgroundColor = 'grey';
       question[i].disabled = false;
   }
+}
+
+function submitWord() {
+  document.getElementById("setofwords") = letCon2;
+  letCon1 = [];
+  letCon2 = [];
+  document.getElementById("word").textContent = "Word";
 }
 
 //A Function to generate random letters when the board is reset
