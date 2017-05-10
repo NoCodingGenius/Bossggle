@@ -1,17 +1,19 @@
 //A function to get the ID and puts the possible letters in the ID
-function getWord ( ) {
-  var letterContainer = document.querySelectorAll('.btn')[i].innerText;
-  var letter = letterContainer.innerText
-  document.getElementById("word").innerHTML = letter;
-}
+// function getWord ( ) {
+//   var letterContainer = document.querySelectorAll('.btn')[i].innerText;
+//   var letter = letterContainer.innerText
+//   document.getElementById("word").innerHTML = letter;
+// }
 
 function getLetter(){
-  var letterContainer = document.querySelectorAll('.btn')[i].innerText;
+  var word = document.getElementById("word").innerHTML = event.target.innerHTML
+
+  console.log(word.concat(event.target.innerHTML))
+//Make this an array instead (above)
+
+    // console.log( event.target.innerHTML )
 }
 
-for ( var i = 0; i < question.length; i++){
-  question[i].addEventListener('click', myColor)
-}
 //when i click any particular button
 //grab its innerHtml
 /*for ( var i=0; i<question.length; i++){
