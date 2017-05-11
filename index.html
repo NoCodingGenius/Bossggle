@@ -4,6 +4,7 @@
   <meta charset = "UTF-8">
   <title>Bossggle</title>
   <link rel = "stylesheet" type = "text/css" href = "main.css"/>
+  <script src="https://cdn.rawgit.com/tannerwelsh/dcd33611c1bc615fd5a1c8cadc05d1b2/raw/470cde9d72927fef717f354b3ba3718a0aaabb99/basicWords.js" charset="utf-8"></script>
 </head>
 <body>
 
@@ -11,7 +12,7 @@
 <div class="container">
 
 <!--Leftside of the screen-->
-<div class="row">
+<div class="column">
 <div id="word">Word</div>
 <div class="leftside col-sm-4">
 <header>
@@ -24,9 +25,6 @@
 <hr>
 <p>List of Words</p>
 <div id="list"></div>
-<footer>
-  <a href="https://github.com/NoCodingGenius/Bossggle">Fork me on GitHub</a>
-</footer>
 </div>
 
 
@@ -66,27 +64,9 @@
   </table>
 
   <button class="button3" type="button" onclick="resetWord()">Reset</button>
-  <button class="button4" type="button" onclick="getTimeRemaining()">Start</button>
-  <h1 class="countdown">Countdown Clock</h1>
-  <div id="clockdiv">
-    <div>
-      <span class="days"></span>
-      <div class="smalltext">Days</div>
-    </div>
-    <div>
-      <span class="hours"></span>
-      <div class="smalltext">Hours</div>
-    </div>
-    <div>
-      <span class="minutes"></span>
-      <div class="smalltext">Minutes</div>
-    </div>
-    <div>
-      <span class="seconds"></span>
-      <div class="smalltext">Seconds</div>
-    </div>
-  </div>
-</div>
+
+<div class="time">Game ends in <span id="time">01:00</span> seconds!</div>
+
 </div>
 
 </div>
@@ -95,4 +75,7 @@
 
 <script src="bossggle.js"></script>
 </body>
+<footer>
+  <a href="https://github.com/NoCodingGenius/Bossggle">Fork me on GitHub</a>
+</footer>
 </html>

@@ -1,9 +1,9 @@
 //Variables necessary
-var letterContainer1 = [];
-var letterContainer2 = [];
-var letterContainer3 = [];
-var letterContainer4 = [];
-var letterContainer5 = [];
+var letterContainer1 = [];//Letters
+var letterContainer2 = [];//Letters joined =ing the word
+var letterContainer3 = [];//Word with the break and reverse chronological order
+var letterContainer4 = [];//Removed the commas
+var letterContainer5 = [];//Points
 
 //A function to get the ID and puts the possible letters in the ID
 function getLetter () {
@@ -38,6 +38,8 @@ function clearWord() {
 
 //A function to submit the word and receive points
 function submitWord() {
+  var letterContainer6 = letterContainer2.toLowerCase();//changing letters to lowercase
+if (isBasicWord(letterContainer6) == true){
   if (letterContainer2.length >= 3) {
   letterContainer3.unshift(letterContainer2, "<br>");
   letterContainer4 = letterContainer3.join("");
@@ -50,6 +52,10 @@ function submitWord() {
   alert("Too Small!");
   clearWord();
   }
+} else {
+  alert("Not a valid word!");
+  clearWord();
+}
 }
 
 function add(a, b) {
@@ -68,10 +74,11 @@ function resetWord() {
     if ( i%5 === 0 ) {
     question[i].innerHTML = randomVowel();
   }
-  else {
+    else {
     question[i].innerHTML = randomLetter();
   }
 }
+timerStart()
 }
 //A Function to generate random letters when the board is reset
 function randomLetter() {
@@ -87,48 +94,41 @@ function randomVowel() {
 }
 
 //A function to start the timer
-function getTimeRemaining(endtime) {
-  var t = Date.parse(endtime) - Date.parse(new Date());
-  var seconds = Math.floor((t / 1000) % 60);
-  var minutes = Math.floor((t / 1000 / 60) % 60);
-  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-  var days = Math.floor(t / (1000 * 60 * 60 * 24));
-  return {
-    'total': t,
-    'days': days,
-    'hours': hours,
-    'minutes': minutes,
-    'seconds': seconds
-  };
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    var handle = setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+            clearInterval(handle);
+            handle = 0;
+        for (var i = 0; i < question.length; i++) {
+          question [i].disabled = true;
+          }
+        }
+    }, 1000);
 }
 
-function initializeClock(id, endtime) {
-  var clock = document.getElementById(id);
-  var daysSpan = clock.querySelector('.days');
-  var hoursSpan = clock.querySelector('.hours');
-  var minutesSpan = clock.querySelector('.minutes');
-  var secondsSpan = clock.querySelector('.seconds');
+function timerStart() {
+    var oneMinute = 60 * 1,
+        display = document.querySelector('#time');
+    startTimer(oneMinute, display);
+};
 
-  function updateClock() {
-    var t = getTimeRemaining(endtime);
+//The below function is useful when you have multiple onload events
+//All you need to do is to create a new function and then stack
+//the functions you would like to load by function name
+window.onload = function name() {
+resetWord();
+timerStart();
 
-    daysSpan.innerHTML = t.days;
-    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-
-    if (t.total <= 0) {
-      clearInterval(timeinterval);
-    }
-  }
-
-  updateClock();
-  var timeinterval = setInterval(updateClock, 1000);
-}
-
-var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
-initializeClock('clockdiv', deadline);
-
-window.onload = resetWord();
+};
 
 // if (i = i + 1 || i = i + 3|| i = i + 4|| i = i + 5|| i = i - 1|| i = i - 3|| i = i - 4 || i = i - 5)

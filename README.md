@@ -26,12 +26,12 @@ These are the basic specs for Bossggle, broken into 5 stages. If you complete th
 
 #### Stage 5
 - [X] There is a link to the source code (your GitHub repo) in the bottom left.
-- [ ] Repo is published as a [GitHub pages][gh-pages] site.
+- [X] Repo is published as a [GitHub pages][gh-pages] site.
 - [X] The artifact produced is properly licensed, preferably with the [MIT license][mit-license].
 
 ### Stretch
 - [ ] Game uses real Boggle rules:
   - [ ] Letters must all be connected (second letter must be a "neighbor" of the first letter, third letter must be a "neighbor" of the second, and so on).
   - [X] Words must be at least 3 letters long.
-  - [ ] Game is timed: players have 1 minute to make as many words as possible.
-- [ ] Words must be real English words; non-English words don't earn points. See [Validating Words](#validating-words) section for more information.
+  - [x] Game is timed: players have 1 minute to make as many words as possible.
+- [X] Words must be real English words; non-English words don't earn points. See [Validating Words](#validating-words) section for more information.
