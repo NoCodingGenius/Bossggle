@@ -5,6 +5,20 @@ var letterContainer3 = [];//Word with the break and reverse chronological order
 var letterContainer4 = [];//Removed the commas
 var letterContainer5 = [];//Points
 
+//To make sure letter are all connected
+
+var count = 0
+document.getElementByClassName(question).click(function() {
+count++;
+if(count == 1) {
+  getLetter();
+    }else if(count >= 2){
+      for (var i = 0; i < question.length; i++) {
+
+          }
+    }
+});
+
 //A function to get the ID and puts the possible letters in the ID
 function getLetter () {
   var word = event.target.innerHTML;
@@ -130,5 +144,3 @@ resetWord();
 timerStart();
 
 };
-
-// if (i = i + 1 || i = i + 3|| i = i + 4|| i = i + 5|| i = i - 1|| i = i - 3|| i = i - 4 || i = i - 5)
