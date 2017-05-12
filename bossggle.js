@@ -5,19 +5,88 @@ var letterContainer3 = []; //Word with the break and reverse chronological order
 var letterContainer4 = []; //Removed the commas
 var letterContainer5 = []; //Points
 
+var question = document.querySelectorAll('.btn'); //selects all of the .btn classes (nodes)
+var click = 0;
+var buttonId = 0;
+
 //To make sure letter are all connected neighboring portion of the stretch goal
-
-/*var count = 0
-document.getElementByClassName(question).click(function() {
-count++;
-if(count == 1) {
-  getLetter();
-    }else if(count >= 2){
-      for (var i = 0; i < question.length; i++) {
-
-          }
+for (var i = 0; i < question.length; i++) {
+  question[i].addEventListener('click', function clicks() {
+    ++click;
+    if (click === 1) {
+      getLetter(question[i]);
+      myColor(question[i]);
+    } else if (click > 1 && buttonId == 'btn1') {
+      document.querySelectorAll('#btn3, #btn4, #btn7, #btn8, #btn9, #btn10, #btn11, #btn12, #btn13, #btn14, #btn15, #btn16').disabled = true;
+      getLetter(question[i]);
+      myColor(question[i]);
+    } else if (click > 1 && buttonId == 'btn2') {
+      document.querySelectorAll('#btn4, #btn8, #btn9, #btn10, #btn11, #btn12, #btn13, #btn14, #btn15, #btn16').disabled = true;
+      getLetter(question[i]);
+      myColor(question[i]);
+    } else if (click > 1 && buttonId == 'btn3') {
+      document.querySelectorAll('#btn1, #btn5, #btn9, #btn10, #btn11, #btn12, #btn13, #btn14, #btn15, #btn16').disabled = true;
+      getLetter(question[i]);
+      myColor(question[i]);
+    } else if (click > 1 && buttonId == 'btn4') {
+      document.querySelectorAll('#btn1, #btn2, #btn5, #btn6, #btn9, #btn10, #btn11, #btn12, #btn13, #btn14, #btn15, #btn16').disabled = true;
+      getLetter(question[i]);
+      myColor(question[i]);
+    } else if (click > 1 && buttonId == 'btn5') {
+      document.querySelectorAll('#btn3, #btn4, #btn7, #btn8, #btn11, #btn12, #btn13, #btn14, #btn15, #btn16').disabled = true;
+      getLetter(question[i]);
+      myColor(question[i]);
+    } else if (click > 1 && buttonId == 'btn6') {
+      document.querySelectorAll('#btn4, #btn8, #btn12, #btn13, #btn14, #btn15, #btn16').disabled = true;
+      getLetter(question[i]);
+      myColor(question[i]);
+    } else if (click > 1 && buttonId == 'btn7') {
+      document.querySelectorAll('#btn1, #btn5, #btn9, #btn13, #btn14, #btn15, #btn16').disabled = true;
+      getLetter(question[i]);
+      myColor(question[i]);
+    } else if (click > 1 && buttonId == 'btn8') {
+      document.querySelectorAll('#btn1, #btn2, #btn5, #btn6, #btn9, #btn10, #btn13, #btn14, #btn15, #btn16').disabled = true;
+      getLetter(question[i]);
+      myColor(question[i]);
+    } else if (click > 1 && buttonId == 'btn9') {
+      document.querySelectorAll('#btn1, #btn2, #btn3, #btn4, #btn7, #btn8, #btn11, #btn12, #btn15, #btn16').disabled = true;
+      getLetter(question[i]);
+      myColor(question[i]);
+    } else if (click > 1 && buttonId == 'btn10') {
+      document.querySelectorAll('#btn1, #btn2, #btn3, #btn4, #btn8, #btn12, #btn16').disabled = true;
+      getLetter(question[i]);
+      myColor(question[i]);
+    } else if (click > 1 && buttonId == 'btn11') {
+      document.querySelectorAll('#btn1, #btn2, #btn3, #btn4, #btn5, #btn9, #btn13').disabled = true;
+      getLetter(question[i]);
+      myColor(question[i]);
+    } else if (click > 1 && buttonId == 'btn12') {
+      document.querySelectorAll('#btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn9, #btn10, #btn13, #btn14').disabled = true;
+      getLetter(question[i]);
+      myColor(question[i]);
+    } else if (click > 1 && buttonId == 'btn13') {
+      document.querySelectorAll('#btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn7, #btn8, #btn11, #btn12, #btn15, #btn16').disabled = true;
+      getLetter(question[i]);
+      myColor(question[i]);
+    } else if (click > 1 && buttonId == 'btn14') {
+      document.querySelectorAll('#btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn7, #btn8, #btn12, #btn16').disabled = true;
+      getLetter(question[i]);
+      myColor(question[i]);
+    } else if (click > 1 && buttonId == 'btn15') {
+      document.querySelectorAll('#btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn7, #btn8, #btn9, #btn13').disabled = true;
+      getLetter(question[i]);
+      myColor(question[i]);
+    } else if (click > 1 && buttonId == 'btn16') {
+      document.querySelectorAll('#btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn7, #btn8, #btn9, #btn10, #btn13, #btn14').disabled = true;
+      getLetter(question[i]);
+      myColor(question[i]);
     }
-}); incomplete*/
+  });
+}
+
+function buttonIdGet(button) {
+  buttonId = event.target.id;
+}
 
 //A function to get the letter and puts the possible letters together as a word
 function getLetter() {
@@ -28,15 +97,9 @@ function getLetter() {
 }
 
 //Change button color to orange when clicked
-var question = document.querySelectorAll('.btn'); //selects all of the .btn classes (nodes)
-
 function myColor() {
-  this.style.backgroundColor = '#FEA221'; //background color will be orange
-  this.disabled = true; //disables the button once clicked
-}
-
-for (var i = 0; i < question.length; i++) { //sets a variable before the loop starts (var i = 0), defines the condition for the loop to run (i must be less than lenth of var question), increases a value (i++) each time the code block in the loop has been executed)
-  question[i].addEventListener('click', myColor); //once button is clicked the color will change to myColor()xs
+  event.target.style.backgroundColor = '#FEA221'; //background color will be orange
+  event.target.disabled = true; //disables the button once clicked
 }
 
 //A function to clear the board
@@ -44,6 +107,7 @@ function clearWord() {
   document.getElementById("word").textContent = "Word"; //When the board is cleared then the default word on the board will be "word"
   letterContainer1 = []; //Letter
   letterContainer2 = []; //Letter joined --- both letterContainers1 and letterContainer2 are included so that the single letter and the joined array can be erased
+  click = 0;
   for (var i = 0; i < question.length; i++) { //sets a variable before the loop starts (var i = 0), defines the condition for the loop to run (i must be less than lenth of var question), increases a value (i++) each time the code block in the loop has been executed)
     question[i].style.backgroundColor = '#FCB7C3'; //background color of the board
     question[i].disabled = false; //buttons are no longer disabled once the letters are cleared from the board
