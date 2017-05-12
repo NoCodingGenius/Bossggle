@@ -3,22 +3,21 @@ body {
 }
 
 .leftside {
-    float: left;
-    max-width: 160px;
-    margin: 0;
-    padding: 1em;
-    background-color: #6C5B7B;
-    height: 85vh;
+  float: left;
+  max-width: 160px;
+  margin: 0;
+  padding: 1em;
+  background-color: #6C5B7B;
+  height: 85vh;
 }
 
 .rightside {
-    margin-left: 170px;
-    border-left: 1px solid gray;
-    padding: 1em;
-    overflow: hidden;
-    height: 85vh;
+  margin-left: 170px;
+  border-left: 1px solid gray;
+  padding: 1em;
+  overflow: hidden;
+  height: 85vh;
 }
-
 
 .btn-group .button {
   display: block;
@@ -84,7 +83,7 @@ body {
   background-color: orange;
 }
 
-table,td {
+table, td {
   border: 1px solid black;
 }
 
@@ -107,6 +106,6 @@ table {
 }
 
 footer {
-   width:100%;
-   position: absolute;
+  width: 100%;
+  position: absolute;
 }
